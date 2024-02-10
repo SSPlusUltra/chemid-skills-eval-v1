@@ -1,3 +1,10 @@
+![end_result](https://github.com/SSPlusUltra/chemid-skills-eval-v1/assets/52967609/2b30dac6-0067-42ee-8270-5f1b82b2efa8)
+
+END RESULT
+
+
+
+
 # Skills Evaluation V1.0
 
 The goals of this evaluation are:
