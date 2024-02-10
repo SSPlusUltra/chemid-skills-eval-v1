@@ -1,0 +1,23 @@
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+.file-input {
+  display: none;
+}
+
+.val-container{
+  display: flex;
+  gap:5em;
+}

@@ -1,0 +1,15 @@
+.brand-name{
+    height: 50px;
+    text-align: center;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+    gap:2em;
+}
+
