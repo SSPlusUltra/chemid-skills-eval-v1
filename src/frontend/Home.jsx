@@ -1,5 +1,5 @@
 import '../css/home.css'
-import DropzoneButton from './Dropbutton'
+import Uploadbutton from './Uploadbutton'
 
 export default function Home() {
 	return (
@@ -7,12 +7,8 @@ export default function Home() {
 			<main className='brand-name'>
 				<h2>DataExtractor</h2>
 			</main>
-
 			<div className='container'>
-				<div>
-					<DropzoneButton />
-				</div>
-
+				<Uploadbutton />
 			</div>
 
 		</>

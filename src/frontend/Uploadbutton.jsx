@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import '../css/dropbutton.css'
+import Table from './Table'
 
-export default function DropzoneButton() {
+export default function Uploadbutton() {
 	const [uploadedJsonData, setUploadedJsonData] = useState(null)
 
 	const handleFileChange = async (event) => {
-		const file = event.target.files[0]
+		const file = event.target.files[0] /* file handling logic and api communication */
 		if (file) {
 			if (file.type === 'text/csv' || file.name.endsWith('.csv')) {
 				const formData = new FormData()
 				formData.append('csvFile', file)
-
 				try {
-					const response = await fetch('http://localhost:8080/upload', {
+					const response = await fetch('http://localhost:8080/upload', { /* sending uploaded file to api */
 						method: 'POST',
 						body: formData
 					})
@@ -51,44 +51,13 @@ export default function DropzoneButton() {
 			<div className='val-container'>
 				<div>
 					{uploadedJsonData && <h3>Format 1:</h3>}
+					{/* displaying format1: json format */}
 					<pre>{uploadedJsonData && JSON.stringify(uploadedJsonData, null, 2)}</pre>
 				</div>
 				<div>
+					{/* displaying format2: table format */}
 					{uploadedJsonData && <h3>Format 2:</h3>}
-					{uploadedJsonData && (
-						<div className='json-data'>
-							<h3>Received JSON Data:</h3>
-							{Object.entries(uploadedJsonData).map(([key, value]) => (
-								<div key={key}>
-									<h4>{key}</h4>
-									{Array.isArray(value) && (
-										<table>
-											<thead>
-												<tr>
-													{Object.keys(value[0]).map((header) => (
-														<th key={header}>{header}</th>
-													))}
-												</tr>
-											</thead>
-											<tbody>
-												{value.map((item) => (
-													<tr key={`${item.Compound}-${item.Compound.length}`}>
-														{Object.values(item).map((val) => (
-															<td key={`${item.Compound}-${val}`}>{val}</td>
-
-														))}
-													</tr>
-												))}
-											</tbody>
-										</table>
-									)}
-									{!Array.isArray(value) && (
-										<pre>{JSON.stringify(value, null, 2)}</pre>
-									)}
-								</div>
-							))}
-						</div>
-					)}
+					{uploadedJsonData && <Table data={uploadedJsonData} />}
 				</div>
 			</div>
 		</div>

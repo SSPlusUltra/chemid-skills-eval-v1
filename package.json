@@ -3,7 +3,7 @@
 	"type": "commonjs",
 	"scripts": {
 		"frontend": "vite --config ./config/vite.config.js",
-		"backend": "nodemon ./src/backend/index.js"
+		"backend": "nodemon ./src/backend/services/index.js"
 	},
 	"devDependencies": {
 		"@vitejs/plugin-react": "^4.2.1",
